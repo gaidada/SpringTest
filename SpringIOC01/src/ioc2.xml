@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+">
+    <!--实验4 正确为各种属性赋值-->
+    <bean id="person01" class="com.gai.bean.Person">
+        <property name="email">
+            <!--进行复杂赋值-->
+            <null/>
+        </property>
+        <property name="car" ref="car01"></property>
+    </bean>
+    <bean class="com.gai.bean.Car" id="car01">
+        <property name="carName" value="BMW"></property>
+        <property name="color" value="blue"></property>
+        <property name="price" value="3000"></property>
+    </bean>
+
+    <bean class="com.gai.bean.Person" id="person02">
+        <!--List属性-->
+        <property name="books">
+            <list>
+                <bean class="com.gai.bean.Book" p:bookName="西游记" p:authorName="吴承恩">
+                </bean>
+                <!--引用外部-->
+                <ref bean="book01"/>
+            </list>
+        </property>
+
+        <!--map赋值-->
+        <property name="maps">
+            <map>
+                <!--一个entry代表一个键值对-->
+                <entry key="key01" value="张三"/>
+                <entry key="key02" value-ref="book01"/>
+                <entry key="key03">
+                    <bean class="com.gai.bean.Car">
+                        <property name="carName" value="bmw"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="username">root</prop>
+                <prop key="password">1234</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="book01" class="com.gai.bean.Book">
+        <property name="bookName" value="东游记"/>
+    </bean>
+
+    <!--util名称空间创建集合类型的bean-->
+    <bean id="person03" class="com.gai.bean.Person">
+        <property name="maps" ref="myMap"/>
+    </bean>
+    <util:map id="myMap">
+        <entry key="key001" value="111"></entry>
+    </util:map>
+
+
+    <!--级联属性(属性的属性)赋值-->
+    <bean class="com.gai.bean.Person" id="person04">
+        <!--为car赋值时改变价格-->
+        <property name="car" ref="car01"/>
+        <property name="car.price" value="2000"/>
+    </bean>
+
+    <!--实验6，通过继承实现bean配置信息的重用-->
+    <!--abstract是一个抽象的，不能获取实例，只能被别人继承-->
+    <bean class="com.gai.bean.Person" id="person05" abstract="true">
+        <property name="lastName" value="zhang"/>
+        <property name="age" value="14"/>
+        <property name="gender" value="boy"/>
+        <property name="email" value="zhang@qq.com"/>
+    </bean>
+    <!--指定bean的配置继承于-->
+    <bean parent="person05" id="person06">
+        <property name="lastName" value="lisi"/>
+    </bean>
+</beans>

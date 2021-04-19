@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.gai.bean.Car" id="car">
+        <property name="carName" value="BMW"/>
+        <property name="color" value="blue"/>
+    </bean>
+    <bean class="com.gai.bean.Person" id="person" autowire="byName">
+        <!-- <property name="car" ref="car"/>-->
+    </bean>
+
+    <!--SpEL-->
+    <bean class="com.gai.bean.Person" id="person2">
+        <!--字面量-->
+        <property name="age" value="#{12+5}"/>
+        <property name="lastName" value="#{car.color}"/>
+        <property name="car" value="#{car}"/>
+        <property name="email" value="#{T(java.util.UUID).randomUUID().toString().substring(0,5)}"/>
+        <property name="gender" value="#{car.getCarName()}"/>
+    </bean>
+</beans>

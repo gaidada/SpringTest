@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--改变bean的拆改那就顺序-->
+    <bean id="person" class="com.gai.bean.Person" depends-on="car">
+    </bean>
+    <bean id="car" class="com.gai.bean.Car">
+    </bean>
+
+    <!--bean的作用域，指定bean是否单实例-->
+    <bean id="book" class="com.gai.bean.Book" scope="singleton">
+    </bean>
+
+    <!--工厂模式，FactoryBean
+    静态工厂：工厂本身不用创建对象
+    实例工厂：工厂本身要创建对象
+    -->
+    <!--1.静态工厂-->
+    <bean id="airPlane01" class="com.gai.factory.AirPlaneStaticFactory" factory-method="getAirPlane">
+        <constructor-arg value="张三"></constructor-arg>
+    </bean>
+    <!--2.实例工厂-->
+    <bean class="com.gai.factory.AirPlaneInstanceFactory" id="factory">
+    </bean>
+    <!--factory-bean-->
+    <bean class="com.gai.bean.AirPlane" id="airPlane02" factory-bean="factory" factory-method="getAirPlane">
+        <constructor-arg value="李四"/>
+    </bean>
+    <!--FactroyBean,是spring规定的一个接口,ioc启动不会创建实例-->
+    <bean class="com.gai.factory.MyFactoryBeanImpl" id="myFactoryBean">
+
+    </bean>
+</beans>

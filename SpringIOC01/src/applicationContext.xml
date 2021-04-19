@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--创建带有生命周期方法的bean-->
+    <bean id="book01" class="com.gai.bean.Book" destroy-method="myDestry" init-method="myInit">
+
+    </bean>
+
+    <!--&lt;!&ndash;实验11，后置处理器&ndash;&gt;-->
+    <!--<bean class="com.gai.bean.MyBeanPostProcessor" id="beanPostProcessor">-->
+
+    <!--</bean>-->
+
+</beans>

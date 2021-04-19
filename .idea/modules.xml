@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringAOP01/SpringAOP01.iml" filepath="$PROJECT_DIR$/SpringAOP01/SpringAOP01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringAOP02/SpringAOP02.iml" filepath="$PROJECT_DIR$/SpringAOP02/SpringAOP02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringAOP03xml/SpringAOP03xml.iml" filepath="$PROJECT_DIR$/SpringAOP03xml/SpringAOP03xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIOC01/SpringIOC01.iml" filepath="$PROJECT_DIR$/SpringIOC01/SpringIOC01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIOC02/SpringIOC02.iml" filepath="$PROJECT_DIR$/SpringIOC02/SpringIOC02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIOC03/SpringIOC03.iml" filepath="$PROJECT_DIR$/SpringIOC03/SpringIOC03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringTXjdbcTemplate/SpringTXjdbcTemplate.iml" filepath="$PROJECT_DIR$/SpringTXjdbcTemplate/SpringTXjdbcTemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringTest.iml" filepath="$PROJECT_DIR$/SpringTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringTxtx01/SpringTxtx01.iml" filepath="$PROJECT_DIR$/SpringTxtx01/SpringTxtx01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringTxtxDetail/SpringTxtxDetail.iml" filepath="$PROJECT_DIR$/SpringTxtxDetail/SpringTxtxDetail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringTxtxXml/SpringTxtxXml.iml" filepath="$PROJECT_DIR$/SpringTxtxXml/SpringTxtxXml.iml" />
+    </modules>
+  </component>
+</project>

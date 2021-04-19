@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="person1" class="com.gai.bean.Person">
+        <property name="lastName" value="张"/>
+        <property name="age" value="12"/>
+        <property name="gender" value="男"/>
+        <property name="email" value="zhang@145.com"/>
+    </bean>
+    <bean id="person2" class="com.gai.bean.Person">
+        <property name="lastName" value="li"/>
+        <property name="age" value="20"/>
+        <property name="gender" value="nv"/>
+        <property name="email" value="li@qq.com"/>
+    </bean>
+
+    <bean id="person3" class="com.gai.bean.Person">
+        <!--调用有参构造器创建对象并赋值-->
+        <constructor-arg name="lastName" value="小明"/>
+        <constructor-arg name="email" value="ming.com"/>
+        <constructor-arg name="gender" value="男"/>
+        <constructor-arg name="age" value="80"/>
+    </bean>
+
+    <!--通过p名称空间为bean赋值-->
+    <!--名称空间在xml中是为了防止标签重复的-->
+    <bean id="person06" class="com.gai.bean.Person" p:age="50" p:lastName="哈哈" p:email="haha@123.com" p:gender="男">
+
+    </bean>
+
+</beans>
